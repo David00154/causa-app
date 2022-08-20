@@ -20,11 +20,6 @@ export type Link = {
 export const useSidebarLinks = () => {
     let [links, _] = useState<Link[]>([
         {
-            url: '',
-            icon: <RiHomeSmile2Line size={23} className="" />,
-            text: 'Dashboard'
-        },
-        {
             url: '#',
             icon: <RiShoppingCartLine size={23} className="" />,
             text: 'Orders'

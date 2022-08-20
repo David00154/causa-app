@@ -10,7 +10,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				carrois: ["Carrois Gothic SC", "sans serif"],
+				poppins: ["Poppins", "sans-serif"],
 			},
 			colors: {
 				"custom-dark": "rgb(24 24 24 / var(--tw-bg-opacity))",

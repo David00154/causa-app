@@ -22,6 +22,7 @@ export type State = {
     loggedIn: boolean;
     email: string;
     isCheckingOut?: boolean;
+    sidebarOpened: boolean;
 }
 type GlobalProviderProps = {
     state: State;
@@ -38,7 +39,8 @@ const GlobalProvider: FC<{ children: ReactElement }> = ({ children }) => {
         storeName: '',
         loggedIn: true,
         isCheckingOut: false,
-        email: ''
+        email: '',
+        sidebarOpened: true
 
     }
 
@@ -64,6 +66,15 @@ const GlobalProvider: FC<{ children: ReactElement }> = ({ children }) => {
         ],
         []
     )
+
+    useEffect(() => {
+        if (typeof window != undefined) {
+            let width = window.innerWidth
+            if (window.innerHeight < 768) {
+                setState((state: State) => ({ ...state, sidebarOpened: false }))
+            }
+        }
+    }, [])
 
     return (
         <ConnectionProvider endpoint={endpoint}>
